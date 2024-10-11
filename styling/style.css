@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.H1_color {
+    color: #efac73;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.head {
+    width: 100%;
+    padding: 10px 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 1000;
+}
+
+.head {
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none; /* Add this line */
+}
+
+.head.scrolled {
+    background-color: rgba(0, 0, 0, 0.068);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px); /* Add this line */
+}
+
+
+.head .wrapper {
+    max-width: 1898px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav_list img {
+    width: 80px;
+    height: auto;
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    padding: 10px 20px;
+    z-index: 2; /* Make sure the text is above the sliding box */
+    position: relative;
+    display: block;
+}
+
+/* The sliding background box */
+.nav-box {
+    position: absolute;
+    background-color: #efac73;
+    height: 100%;
+    width: 0; /* Will be set dynamically with JS */
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease, width 0.6s ease;
+    z-index: 1;
+    border-radius: 4px;
+    pointer-events: none; /* So it doesn’t interfere with hover */
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+    display: inline-block;
+}
+
+.search .search_bar {
+    padding: 10px 40px 10px 15px; /* Adds padding to the right for the icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 200px;
+    outline: none;
+    font-size: 16px;
+    border-color: #efac73;
+}
+
+.search i {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #efac73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+}
+
+.login-btn i {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000; /* Default icon color */
+}
+
+.login-btn:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #efad738a; /* Background color on hover */
+}
+
+.login-btn:hover i {
+    color: #fff; /* Icon color on hover */
+}
+
+.login-btn a {
+    text-decoration: none;
+    color: #000; /* Link color */
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.home .wrapper {
+    width: 100%;
+    max-width: 1898px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home .wrapper .text-field h1{
+    font-size: 80px;
+    color: #000;
+    margin-top: -150px;
+    font-family: "Archivo Narrow", sans-serif;
+    line-height: 1.1;
+}
+
+.home .wrapper .text-field p {
+    color: #000;
+    font-size: 20px;
+    font-family: "Manrope", sans-serif;
+    margin-top: 10px;
+}
+
+
+.home .wrapper img {
+    width: 800px;
+    height: auto;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.home .wrapper .container {
+    width: 400px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.button_home {
+    width: 200px;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efac73;
+    transition: all 0.5s ease-in;
+}
+
+.button_home:hover {
+    transform: translateX(4px);
+}
+
+a {
+    text-decoration: none;
+}
+
+.button_home h3 {
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.dishes {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.dishes .wrapper {
+    width: 100%;
+    max-width: 1898px;
+    height: 100vh;
+}
+
+.dishes .wrapper h1 {
+    font-size: 54px;
+    font-family: "Archivo Narrow", sans-serif;
+    margin-top: 80px;
+}
+
+.dishes .wrapper .btn_dishes {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.dishes .wrapper .btn_dishes .recepten_toevoegen {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #efac73;
+    margin-left: auto;
+    display: flex;
+    justify-content: end;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Manrope", sans-serif;
+    transition: all 0.4s ease-in;
+}
+
+.dishes .wrapper .btn_dishes .recepten_toevoegen:hover {
+    transform: translateY(-4px);
+}
+
+.dishes .wrapper .btn_dishes .recepten_toevoegen .text {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dishes .wrapper .btn_dishes .recepten_toevoegen .colour {
+    background-color: #efac73;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.dishes .wrapper .btn_dishes .recepten_toevoegen .colour:hover {
+    font-size: 22px;
+}
+
+.dishes .wrapper .btn_dishes .recepten {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border: 1px solid #efac73;
+    background-color: transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.dishes .wrapper .btn_dishes .recepten:hover {
+    background-color: #efac73;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.dishes .wrapper .view_recepten {
+    width: 1898px;
+    height: 800px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between; 
+}
+
+
+.dishes .wrapper .view_recepten .dish_container {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #efac73;
+}
+
+.dishes .wrapper .view_recepten .dish_container .info {
+    width: 600px;
+    height: 50px;
+    background-color: #F7F7F7;
+    margin-top: -5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center; /* Center icons and text vertically */
+}
+
+.info-item i {
+    font-size: 24px; /* Icon size */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.info-text {
+    font-size: 16px; /* Adjust text size */
+    font-family: "Manrope", sans-serif; /* Consistent font */
+}
+
+.dishes .wrapper .view_recepten .dish_container img {
+    width: 600px;
+    height: 275px;
+    border-radius: 4px;
+}
+
+.dishes .wrapper .view_recepten .dish_container .text {
+    width: 600px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.title {
+    text-decoration: none;
+    color: #000;
+    transition: all 0.4s ease-in-out;
+}
+
+.title:hover {
+    color: #efac73;
+    transform: translateY(-3px);
+}
+
+/* modal styling */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker black with opacity for better contrast */
+}
+
+.modal-content {
+    background-color: #ffffff; /* White background */
+    margin: 10% auto; /* Centered with less top margin */
+    padding: 30px; /* Increased padding for better spacing */
+    border: 1px solid #efac73; /* Border with the theme color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 90%; /* Full width with responsive design */
+    max-width: 600px; /* Increased max width */
+    animation: slideIn 0.3s ease-out; /* Add slide-in animation */
+    font-family: "Archivo Narrow", sans-serif;
+}
+
+.close {
+    color: #efac73; /* Themed color */
+    float: right; /* Right aligned */
+    font-size: 28px; /* Increased size for better visibility */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth color transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close:hover,
+.close:focus {
+    color: #d19a5b; /* Darker color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Animation for Modal */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Start above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Optional styling for the form within the modal */
+.modal-content form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Space between form elements */
+}
+
+/* Style for input fields */
+/* General styling for input fields, text areas, file inputs, and buttons */
+input[type="text"],
+textarea,
+input[type="file"],
+button {
+    padding: 10px; /* Consistent padding */
+    border: 2px solid #ccc; /* Slightly thicker light border */
+    border-radius: 4px; /* Rounded corners */
+    font-family: "Manrope", sans-serif; /* Consistent font */
+    font-size: 14px; /* Increase font size for readability */
+    width: 100%; /* Ensure full width within the container */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    resize: none; /* Prevent resizing for text areas */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+}
+
+
+/* Focus effect for input fields, text areas, and file inputs */
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #efac73; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(239, 172, 115, 0.5); /* Soft shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+label {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+}
+
+#btn {
+    background-color: #efac73; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #d19a5b; /* Darker button color on hover */
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    background-color: #d19a5b;
+}
+
+.footer .wrapper {
+    max-width: 1898px;
+    width: 100%;
+    display: flex;
+    height: 120px;
+   
+    align-items: center;
+    border-radius: 4px;
+}
+
+.footer .wrapper img {
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.footer .wrapper .icons_socials {
+    width: 150px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+}
+
+.footer .wrapper .icons_socials i {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer .wrapper .icons_socials i:hover {
+    background-color: #0000003f;
+    color: #fff;
+}
+
+
+/* styling for the dropdown menu */
+
+/* User dropdown styling */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.user-dropdown i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.user-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+

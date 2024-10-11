@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Manrope:wght@200..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.H1_color {
+    color: #efac73;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.head {
+    width: 100%;
+    padding: 10px 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.head .wrapper {
+    max-width: 1898px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav_list img {
+    width: 80px;
+    height: auto;
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    padding: 10px 20px;
+    z-index: 2; /* Make sure the text is above the sliding box */
+    position: relative;
+    display: block;
+}
+
+/* The sliding background box */
+.nav-box {
+    position: absolute;
+    background-color: #efac73;
+    height: 100%;
+    width: 0; /* Will be set dynamically with JS */
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease, width 0.6s ease;
+    z-index: 1;
+    border-radius: 4px;
+    pointer-events: none; /* So it doesn’t interfere with hover */
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+    display: inline-block;
+}
+
+.search input {
+    padding: 10px 40px 10px 15px; /* Adds padding to the right for the icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 200px;
+    outline: none;
+    font-size: 16px;
+    border-color: #efac73;
+}
+
+.search i {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+.login-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #efac73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.login-btn i {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.login-btn:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #efad738a; /* Background color on hover */
+}
+
+.login-btn:hover i {
+    color: #fff; /* Icon color on hover */
+}
+
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.login .wrapper {
+    width: 100%;
+    max-width: 1898px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .wrapper .container {
+    position: relative;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 10px;
+    width: 1400px;
+    min-height: 800px;
+    box-shadow: 5px 5px 20px 0 rgba(214, 214, 214, 1);
+    overflow: hidden;
+}
+
+.form-container {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f9f9, #eaeaea); /* Subtle background gradient */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow around the form */
+    border-radius: 15px; /* Rounded corners for modern look */
+}
+
+/* Input Styling */
+.form-container input {
+    display: block;
+    padding: 14px 22px; /* More padding for better feel */
+    margin: 10px 0; /* Even margin between elements */
+    background: #f6f5f7;
+    border: 2px solid transparent; /* No border by default */
+    outline: none;
+    width: 100%; /* Full width for input */
+    max-width: 320px; /* Optional: Limit the width of inputs */
+    border-radius: 8px; /* Smoother corners */
+    font-size: 16px; /* Increase font size for readability */
+    color: #333; /* Darker text color for better contrast */
+    transition: all 0.3s ease; /* Smooth transition for hover and focus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow to lift the inputs */
+}
+
+/* Hover Effect */
+.form-container input:hover {
+    background-color: #f0f0f0;
+    border-color: #db9252; /* Add a border when hovered */
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.1); /* Enhance shadow on hover */
+}
+
+/* Focus Effect */
+.form-container input:focus {
+    background-color: #ffffff;
+    border-color: #db9252;
+    box-shadow: 0 0 10px #efac73; /* Glowing effect when focused */
+}
+
+  
+.form-sign-in,
+.form-sign-up {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.form-sign-in img {
+    width: 200px;
+    height: auto;
+    margin-top: -80px;
+}
+
+.form-sign-up img {
+    width: 200px;
+    height: auto;
+    margin-top: -80px;
+}
+
+.signin {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: 0.8s;
+}
+.signup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    transition: 0.8s;
+}
+
+.signup.show {
+    bottom: 0;
+}
+.signin.hide {
+    top: -100%;
+}
+
+.form-container h1 {
+    text-align: center;
+    font-size: 62px;
+    text-transform: uppercase;
+    margin: 10px;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+.form-container a {
+    margin: 10px;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: gray;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+}
+
+.btn {
+    padding: 10px;
+    min-width: 320px;
+    border-radius: 4px;
+    color: white;
+    margin: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: #efac73;
+    transition: transform 0.5s ease, background-color 0.7s ease, color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn_register {
+    background-color: #73B6EF;
+}
+
+.btn-form {
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: #efac73;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.overlay h1 {
+    text-align: center;
+    font-size: 62px;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+.overlay span {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    font-family: "Manrope", sans-serif;
+}
+
+.overlay-panel {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.btn-overlay {
+    border: solid 1px white;
+}
+
+.overlay-signup {
+    top: 0;
+    transition: 0.8s;
+}
+.overlay-signin {
+    bottom: -100%;
+    transition: 0.8s;
+    background-color: #73B6EF;
+}
+
+.btn_signin_overlay {
+    background-color: #73B6EF;
+}
+
+.overlay-signin.show {
+    bottom: 0;
+}
+.overlay-signup.hide {
+    top: -100%;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    background-color: #d19a5b;
+}
+
+.footer .wrapper {
+    max-width: 1898px;
+    width: 100%;
+    display: flex;
+    height: 120px;
+   
+    align-items: center;
+    border-radius: 4px;
+}
+
+.footer .wrapper img {
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.footer .wrapper .icons_socials {
+    width: 150px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+}
+
+.footer .wrapper .icons_socials i {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer .wrapper .icons_socials i:hover {
+    background-color: #0000003f;
+    color: #fff;
+}
+
+.success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+    color: #000;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    width: 375px;
+    height: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow */
+    margin-top: 20px;
+    margin-left: 800px;
+    opacity: 0;
+    transform: translateY(20px); /* Starts 100px below the screen */
+    animation: slideUp 1s ease-out forwards; /* 1s animation */
+}
+
+.success-message i {
+    font-size: 24px;
+    color: #11710d;
+    margin-right: 20px;
+}
+
+/* Keyframes for the slide up and fade-in effect */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}

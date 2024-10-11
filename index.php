@@ -23,7 +23,7 @@ session_start();
   <header class="head">
     <div class="wrapper">
       <nav class="nav_list">
-        <a href="index.html"><img src="img/image-removebg-preview (1).png" alt="Logo"></a>
+        <a href="/BEROEPS_2024/Ontkoking/index.php"><img src="img/image-removebg-preview (1).png" alt="Logo"></a>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#">Over Ons</a></li>

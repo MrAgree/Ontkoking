@@ -4,6 +4,8 @@ if (isset($_SESSION['registration_success'])) {
     echo "<div class='success-message'><i class='ri-checkbox-circle-line'></i> " . $_SESSION['registration_success'] . "</div>";
     unset($_SESSION['registration_success']); // Clear the message after displaying
 }
+
+$_SESSION['login_error']
 ?>
 
 <!DOCTYPE html>

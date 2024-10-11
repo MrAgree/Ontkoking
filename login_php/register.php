@@ -15,6 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: /BEROEPS_2024/Ontkoking/login_php/login.php');
         exit();
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "Error: " . mysqli_error($conn); 
     }
 }

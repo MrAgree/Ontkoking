@@ -187,15 +187,15 @@ main {
 
 /* Add specific background images to each circle */
 #circle1 {
-    background-image: url('/img/NoahO.Jpg');
+    background-image: url('../img/NoahO.png');
 }
 
 #circle2 {
-    background-image: url('/img/Tony.jpg');
+    background-image: url('../img/tony.png');
 }
 
 #circle3 {
-    background-image: url('/img/NoahS.jpg');
+    background-image: url('../img/NoahS.png');
 }
 
 

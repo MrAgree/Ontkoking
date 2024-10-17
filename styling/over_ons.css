@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .head {
@@ -156,7 +157,7 @@ nav ul li a {
 
 /* Main Content */
 main {
-    padding: 40px 20px;
+    padding: 50px 200px;
 }
 
 .intro h1 {
@@ -173,14 +174,14 @@ main {
 .image-circles {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .circle {
-    width: 150px;
-    height: 150px;
+    width: 225px;
+    height: 225px;
     border-radius: 50%;
-    border: 2px solid #ccc;
+    border: 2px solid black;
     background-size: cover; /* Ensures the image covers the entire circle */
     background-position: center; /* Centers the image within the circle */
 }
@@ -191,13 +192,12 @@ main {
 }
 
 #circle2 {
-    background-image: url('../img/tony.png');
+    background-image: url('../img/Tony.png');
 }
 
 #circle3 {
     background-image: url('../img/NoahS.png');
 }
-
 
 /* Footer */
 .footer {

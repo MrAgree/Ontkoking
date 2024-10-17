@@ -15,7 +15,7 @@
 <header class="head">
     <div class="wrapper">
       <nav class="nav_list">
-        <a href="index.html"><img src="img/image-removebg-preview (1).png" alt="Logo"></a>
+        <a href="index.php"><img src="img/image-removebg-preview (1).png" alt="Logo"></a>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#">Over Ons</a></li>
@@ -50,7 +50,19 @@
         <div class="wrapper">
             <section class="intro">
                 <h1>KookMedia</h1>
-                <p>Het is een van de meest populaire kook websites...</p>
+                <p>Het is een van de meest populaire kook websites.
+                   Ook is het niet alleen een website, maar het is ook en tv programma.
+                    Je kan daar ook recepten vinden van mensen die op het progamma zitten.<br><br>
+
+                   Mensen zoals majaska of rudoplh hebben meestal hun recepten op de website.
+                   Je kan ook zie wat de populairste recepten zijn op de website.<br><br>
+
+                   De aesthetic van de website is ook kleurrijk wat mensen ook mooi zouden vinden.
+                   Vooral jongeren die bijvoorbeeld vegatarisch of aan het milieu denken zouden de website ook leuk vinden.<br><br>
+                   
+                      De website zou je ook helpen met koken. 
+                      Want de recepten zijn heel erg gedtailleerd.
+                      Dus voor mensen die echt niet kunnen koken kunnen ze het nog steeds proberen dor de gedtailleerde recepten
             </section>
 
         <section class="image-circles">

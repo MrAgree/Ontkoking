@@ -1,0 +1,252 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head {
+    width: 100%;
+    padding: 10px 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 1000;
+}
+
+.head {
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none; /* Add this line */
+}
+
+.head.scrolled {
+    background-color: rgba(0, 0, 0, 0.068);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px); /* Add this line */
+}
+
+
+.head .wrapper {
+    max-width: 1898px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav_list img {
+    width: 80px;
+    height: auto;
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Manrope", sans-serif;
+    padding: 10px 20px;
+    z-index: 2; /* Make sure the text is above the sliding box */
+    position: relative;
+    display: block;
+}
+
+/* The sliding background box */
+.nav-box {
+    position: absolute;
+    background-color: #efac73;
+    height: 100%;
+    width: 0; /* Will be set dynamically with JS */
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease, width 0.6s ease;
+    z-index: 1;
+    border-radius: 4px;
+    pointer-events: none; /* So it doesn’t interfere with hover */
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+    display: inline-block;
+}
+
+.search .search_bar {
+    padding: 10px 40px 10px 15px; /* Adds padding to the right for the icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 200px;
+    outline: none;
+    font-size: 16px;
+    border-color: #efac73;
+}
+
+.search i {
+    position: absolute;
+    right: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #efac73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+}
+
+.login-btn i {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000; /* Default icon color */
+}
+
+.login-btn:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #efad738a; /* Background color on hover */
+}
+
+.login-btn:hover i {
+    color: #fff; /* Icon color on hover */
+}
+
+.login-btn a {
+    text-decoration: none;
+    color: #000; /* Link color */
+}
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.image-circles {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-size: cover; /* Ensures the image covers the entire circle */
+    background-position: center; /* Centers the image within the circle */
+}
+
+/* Add specific background images to each circle */
+#circle1 {
+    background-image: url('/img/NoahO.Jpg');
+}
+
+#circle2 {
+    background-image: url('/img/Tony.jpg');
+}
+
+#circle3 {
+    background-image: url('/img/NoahS.jpg');
+}
+
+
+/* Footer */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    background-color: #d19a5b;
+}
+
+.footer .wrapper {
+    max-width: 1898px;
+    width: 100%;
+    display: flex;
+    height: 120px;
+   
+    align-items: center;
+    border-radius: 4px;
+}
+
+.footer .wrapper img {
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.footer .wrapper .icons_socials {
+    width: 150px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 28px;
+}
+
+.footer .wrapper .icons_socials i {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer .wrapper .icons_socials i:hover {
+    background-color: #0000003f;
+    color: #fff;
+}
+
